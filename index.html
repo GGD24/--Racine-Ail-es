@@ -49,15 +49,21 @@
         .hero-text h1 { font-size: 3.5rem; line-height: 1.1; color: var(--primary-color); }
         .hero-text p { font-size: 1.1rem; margin-bottom: 25px; max-width: 450px; }
 
-        .hero-image { flex: 0.8; display: flex; justify-content: center; }
+        .hero-image { flex: 0.8; display: flex; justify-content: center; align-items: center; }
         .blob {
             width: 380px; height: 380px;
             background: var(--accent-color);
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            display: block; /* Sécurité mobile */
         }
-        .blob img { width: 100%; height: 100%; object-fit: cover; }
+        .blob img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block;
+        }
 
         .btn { 
             padding: 12px 25px; border-radius: 50px; 
@@ -67,7 +73,6 @@
         }
         .btn-primary { background: var(--primary-color); color: var(--white); }
 
-        /* Tarifs */
         .tarifs { padding: 80px 8%; text-align: center; }
         .grid-tarifs { 
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -81,13 +86,12 @@
 
         .contact { background: var(--primary-color); color: var(--white); padding: 60px 10%; text-align: center; border-radius: 40px 40px 0 0; }
 
-        /* RESPONSIVE MOBILE */
         @media (max-width: 768px) {
-            .hero { flex-direction: column-reverse; padding: 100px 5% 40px 5%; text-align: center; justify-content: center; }
+            .hero { flex-direction: column-reverse; padding: 120px 5% 60px 5%; text-align: center; justify-content: center; }
             .hero-text h1 { font-size: 2.2rem; }
             .hero-text p { font-size: 1rem; margin: 15px auto 25px auto; }
-            .blob { width: 240px; height: 240px; margin-bottom: 20px; }
-            .hero-image { flex: none; }
+            .blob { width: 280px; height: 280px; margin-bottom: 30px; }
+            .hero-image { flex: none; display: block; width: 100%; }
             header { padding: 10px 15px; }
             .logo { font-size: 0.9rem; }
         }
@@ -108,7 +112,7 @@
     </div>
     <div class="hero-image">
         <div class="blob">
-            <img src="https://github.com/GGD24/O-Racine-Ailees/blob/main/615245580_122280102452083524_4672569822750065608_n.jpg?raw=true" alt="Soin">
+            <img src="https://raw.githubusercontent.com/GGD24/O-Racine-Ailees/main/615245580_122280102452083524_4672569822750065608_n.jpg" alt="Soin &Ocirc; Racines Ail&eacute;es">
         </div>
     </div>
 </section>
@@ -160,7 +164,6 @@
 
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <script type="text/javascript">
-    // Force le scroll en haut
     window.onload = function() {
         window.scrollTo(0, 0);
         Calendly.initBadgeWidget({ 
