@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ô Racines Ailées | Soins Holistiques</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     
     <style>
         :root {
@@ -14,6 +13,7 @@
             --accent-color: #B7B7A4;
             --text-dark: #3F4238;
             --white: #ffffff;
+            --fb-color: #1877F2;
         }
 
         * { box-sizing: border-box; }
@@ -56,7 +56,7 @@
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            display: block; /* Sécurité mobile */
+            display: block;
         }
         .blob img { 
             width: 100%; 
@@ -72,6 +72,7 @@
             font-size: 0.9rem;
         }
         .btn-primary { background: var(--primary-color); color: var(--white); }
+        .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
 
         .tarifs { padding: 80px 8%; text-align: center; }
         .grid-tarifs { 
@@ -84,7 +85,36 @@
         }
         .price { font-weight: bold; color: var(--primary-color); font-size: 1.2rem; }
 
-        .contact { background: var(--primary-color); color: var(--white); padding: 60px 10%; text-align: center; border-radius: 40px 40px 0 0; }
+        /* Section Contact Modifiée */
+        .contact-section { 
+            background: var(--primary-color); 
+            color: var(--white); 
+            padding: 100px 10%; 
+            text-align: center; 
+            border-radius: 40px 40px 0 0; 
+        }
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            min-width: 250px;
+            flex: 1;
+            transition: 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+        .contact-card:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .contact-card h3 { margin-top: 0; font-size: 1.2rem; }
+        .contact-card p { font-size: 1.1rem; margin-bottom: 0; }
 
         @media (max-width: 768px) {
             .hero { flex-direction: column-reverse; padding: 120px 5% 60px 5%; text-align: center; justify-content: center; }
@@ -100,19 +130,22 @@
 <body>
 
 <header id="top">
-    <a href="#" class="logo">&Ocirc; RACINES AIL&Eacute;ES</a>
-    <a href="#tarifs" class="btn btn-primary" style="padding: 8px 15px;">Nos Tarifs</a>
+    <a href="#" class="logo">Ô RACINES AILÉES</a>
+    <div>
+        <a href="#tarifs" class="btn" style="color: var(--primary-color); font-size: 0.8rem;">Nos Tarifs</a>
+        <a href="#contact" class="btn btn-primary" style="padding: 8px 15px;">Me contacter</a>
+    </div>
 </header>
 
 <section class="hero">
     <div class="hero-text">
-        <h1>Ancrage et <br><i>&Eacute;l&eacute;vation</i></h1>
-        <p>Soins &eacute;nerg&eacute;tiques et massages bien-&ecirc;tre pour retrouver votre s&eacute;r&eacute;nit&eacute;.</p>
-        <a href="https://calendly.com/VOTRE_LIEN_CALENDLY" class="btn btn-primary">Prendre rendez-vous</a>
+        <h1>Ancrage et <br><i>Élévation</i></h1>
+        <p>Soins énergétiques et massages bien-être pour retrouver votre sérénité.</p>
+        <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
     </div>
     <div class="hero-image">
         <div class="blob">
-            <img src="https://raw.githubusercontent.com/GGD24/O-Racine-Ailees/main/615245580_122280102452083524_4672569822750065608_n.jpg" alt="Soin &Ocirc; Racines Ail&eacute;es">
+            <img src="https://raw.githubusercontent.com/GGD24/O-Racine-Ailees/main/615245580_122280102452083524_4672569822750065608_n.jpg" alt="Soin Ô Racines Ailées">
         </div>
     </div>
 </section>
@@ -121,58 +154,63 @@
     <h2>Mes Soins</h2>
     <div class="grid-tarifs">
          <div class="card-tarif">
-            <span class="price">40&euro;</span>
+            <span class="price">40€</span>
             <h3>Rituel Papouilles</h3>
-            <p>30 min — Soin sensoriel (plumes, brosses) d&eacute;di&eacute; au l&acirc;cher-prise total.</p>
+            <p>30 min — Soin sensoriel (plumes, brosses) dédié au lâcher-prise total.</p>
         </div>
         <div class="card-tarif">
-            <span class="price">50&euro;</span>
-            <h3>R&eacute;flexologie plantaire</h3>
-            <p>1h00 — Stimulation des zones r&eacute;flexes, massage mains, cervicales et cr&acirc;ne.</p>
+            <span class="price">50€</span>
+            <h3>Réflexologie plantaire</h3>
+            <p>1h00 — Stimulation des zones réflexes, massage mains, cervicales et crâne.</p>
         </div>
         <div class="card-tarif">
-            <span class="price">60&euro;</span>
+            <span class="price">60€</span>
             <h3>Soin LaHoChi</h3>
-            <p>1h00 — Technique &eacute;nerg&eacute;tique par imposition des mains pour un retour &agrave; soi.</p>
+            <p>1h00 — Technique énergétique par imposition des mains pour un retour à soi.</p>
         </div>
         <div class="card-tarif">
-            <span class="price">60&euro;</span>
-            <h3>Massage m&eacute;tamorphique</h3>
-            <p>1h00 — Pour d&eacute;nouer les &eacute;motions imprim&eacute;es dans le corps.</p>
+            <span class="price">60€</span>
+            <h3>Massage métamorphique</h3>
+            <p>1h00 — Pour dénouer les émotions imprimées dans le corps.</p>
         </div>
         <div class="card-tarif">
-            <span class="price">60&euro;</span>
+            <span class="price">60€</span>
             <h3>Bulle de confort</h3>
-            <p>1h00 — Soins palliatifs et rituel de douceur adapt&eacute;.</p>
+            <p>1h00 — Soins palliatifs et rituel de douceur adapté.</p>
         </div>
          <div class="card-tarif">
-            <span class="price">70&euro;</span>
+            <span class="price">70€</span>
             <h3>Massage intuitif</h3>
-            <p>1h00 — Massage personnalis&eacute; selon la lecture de votre corps et vos besoins.</p>
+            <p>1h00 — Massage personnalisé selon la lecture de votre corps et vos besoins.</p>
         </div>
     </div>
 </section>
 
-<section id="contact" class="contact">
-    <h2>Pr&ecirc;t(e) pour une pause ?</h2>
-    <a href="https://calendly.com/VOTRE_LIEN_CALENDLY" class="btn" style="background: white; color: var(--primary-color);">Voir mes disponibilit&eacute;s</a>
+<section id="contact" class="contact-section">
+    <h2>Prêt(e) pour une pause ?</h2>
+    <p>Contactez-moi directement pour convenir d'un rendez-vous.</p>
+    
+    <div class="contact-container">
+        <a href="tel:0600000000" class="contact-card">
+            <h3>Téléphone</h3>
+            <p>06 00 00 00 00</p>
+        </a>
+
+        <a href="mailto:contact@oracinesailees.fr" class="contact-card">
+            <h3>Email</h3>
+            <p>contact@votremail.fr</p>
+        </a>
+
+        <a href="https://facebook.com/VOTRE_PAGE" target="_blank" class="contact-card">
+            <h3>Facebook</h3>
+            <p>Ô Racines Ailées</p>
+        </a>
+    </div>
 </section>
 
 <footer style="text-align: center; padding: 20px; font-size: 0.8rem; opacity: 0.6;">
-    &copy; 2026 &Ocirc; Racines Ail&eacute;es.
+    &copy; 2026 Ô Racines Ailées.
 </footer>
-
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<script type="text/javascript">
-    window.onload = function() {
-        window.scrollTo(0, 0);
-        Calendly.initBadgeWidget({ 
-            url: 'https://calendly.com/VOTRE_LIEN_CALENDLY', 
-            text: 'R&eacute;server', 
-            color: '#6B705C', textColor: '#ffffff' 
-        }); 
-    };
-</script>
 
 </body>
 </html>
