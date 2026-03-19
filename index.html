@@ -23,6 +23,8 @@
             line-height: 1.5;
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            /* Compense la hauteur du header fixe lors du scroll vers une ancre */
+            scroll-padding-top: 80px;
         }
 
         h1, h2, h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; }
@@ -36,7 +38,15 @@
             border-bottom: 1px solid rgba(107, 112, 92, 0.1);
         }
         
-        .logo { font-size: 1.1rem; color: var(--primary-color); letter-spacing: 1px; text-decoration: none; font-weight: bold; }
+        /* Lien logo qui ramène en haut */
+        .logo { 
+            font-size: 1.1rem; 
+            color: var(--primary-color); 
+            letter-spacing: 1px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            cursor: pointer;
+        }
         
         header div { display: flex; align-items: center; gap: 15px; }
 
@@ -113,31 +123,12 @@
         .contact-card h3 { margin-top: 0; font-size: 1.2rem; }
         .contact-card p { font-size: 0.95rem; margin-bottom: 0; }
 
-        /* --- OPTIMISATION MOBILE --- */
         @media (max-width: 768px) {
-            header { 
-                padding: 15px 15px;
-                flex-wrap: nowrap; /* Garde tout sur la même ligne */
-            }
-
+            header { padding: 15px 15px; }
             .logo { font-size: 0.8rem; flex: 1; }
-
-            header div { 
-                gap: 8px; /* Espace réduit entre les boutons sur mobile */
-            }
-
-            header .btn { 
-                padding: 8px 12px; 
-                font-size: 0.7rem; 
-                white-space: nowrap; /* Empêche le texte de se couper */
-            }
-
-            .hero { 
-                flex-direction: column-reverse; 
-                padding: 160px 5% 60px 5%; /* Plus d'espace en haut pour le menu */
-                text-align: center; 
-            }
-            
+            header div { gap: 8px; }
+            header .btn { padding: 8px 12px; font-size: 0.7rem; white-space: nowrap; }
+            .hero { flex-direction: column-reverse; padding: 140px 5% 60px 5%; text-align: center; }
             .hero-text h1 { font-size: 2.5rem; }
             .blob { width: 300px; height: 300px; margin-bottom: 30px; }
             .contact-card { min-width: 100%; }
@@ -147,7 +138,7 @@
 <body>
 
 <header id="top">
-    <a href="#" class="logo">Ô RACINES AILÉES</a>
+    <a href="#top" class="logo">Ô RACINES AILÉES</a>
     <div>
         <a href="#tarifs" class="btn" style="color: var(--primary-color); border: 1px solid var(--primary-color);">Tarifs</a>
         <a href="#contact" class="btn btn-primary">Contact</a>
@@ -208,7 +199,7 @@
     <p>Contactez-moi directement pour convenir d'un rendez-vous ou me rendre visite.</p>
     
     <div class="contact-container">
-        <a href="https://www.google.com/maps/search/?api=1&query=rue+Emile+hermant+36+6200+Bouffioulx+Belgium" target="_blank" class="contact-card">
+        <a href="https://www.google.com/maps/search/?api=1&query=rue+Emile+hermant+36+6200+Bouffioulx" target="_blank" class="contact-card">
             <h3>Adresse</h3>
             <p>rue Émile hermant 36,<br>6200 Bouffioulx, Belgique</p>
         </a>
